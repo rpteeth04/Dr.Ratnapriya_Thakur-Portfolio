@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ratnapriya Thakur | Career Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        :root {
+            --cosmic-base: #05010F;
+            --nebula-purple: #4C1D95; /* Deep purple */
+            --starlight: #E2DCF2;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cosmic-base);
+            color: var(--starlight);
+            /* Fixed deep space gradient background */
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(107, 33, 168, 0.15), transparent 40%),
+                radial-gradient(circle at 85% 10%, rgba(217, 70, 239, 0.1), transparent 40%),
+                radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.1), transparent 40%);
+            background-attachment: fixed;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* High-end frosted glass effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(192, 132, 252, 0.3);
+            box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
+        }
+
+        /* Glowing text effects for tech keywords */
+        .neon-text {
+            background: linear-gradient(to right, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Navigation underlines */
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+            color: #A78BFA;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c084fc;
+            transition: width 0.3s;
+            box-shadow: 0 0 8px #c084fc;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: #fff; text-shadow: 0 0 10px rgba(192,132,252,0.5); }
+
+        .btn-glow {
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu Glass */
+        .mobile-menu {
+            background: rgba(5, 1, 15, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card px-6 py-4 border-b border-white/5 rounded-none">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <span class="serif font-bold text-xl tracking-tight text-white drop-shadow-md">DRT.</span>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#connect" class="nav-link">Connect</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-white focus:outline-none transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full mobile-menu flex flex-col items-center py-6 space-y-6 shadow-2xl transition-all duration-300 opacity-0 transform -translate-y-4">
+            <a href="#about" class="nav-link mobile-link text-lg uppercase tracking-widest">About</a>
+            <a href="#projects" class="nav-link mobile-link text-lg uppercase tracking-widest">Projects</a>
+            <a href="#connect" class="nav-link mobile-link text-lg uppercase tracking-widest">Connect</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-center text-center reveal">
+        <!-- Glowing Accent Line -->
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mb-8 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.6)]"></div>
+        
+        <h1 class="serif text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+            Dr. Ratnapriya Thakur, <span class="neon-text">BDS</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
+            Clinical Professional transitioning into <span class="text-white font-semibold">Medical Affairs & Clinical Research</span>. 
+            Bridging clinical expertise with <span class="neon-text font-medium">AI fluency</span> and technical problem-solving.
+        </p>
+    </header>
+
+    <!-- Professional Summary -->
+    <section id="about" class="py-20 px-6 relative reveal">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2">
+                    <h2 class="serif text-3xl font-bold mb-6 text-white">The Strategic Pivot</h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed font-light">
+                        With a rigorous foundation in dental surgery, I have spent years mastering patient-centric care and evidence-based clinical protocols. I am now pivoting toward <strong class="text-white font-medium">Medical Affairs</strong> and <strong class="text-white font-medium">Clinical Research</strong>, where my background in healthcare meets strategic scientific communication.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed font-light">
+                        I am proactively upskilling in <strong class="text-white font-medium">ICH-GCP protocols</strong> and clinical trial methodologies, while simultaneously developing technical fluency in <strong class="text-purple-300 font-medium">HTML/CSS, AI-assisted architecture, and data visualization</strong> to lead in the digital-first era of healthcare.
+                    </p>
+                </div>
+                
+                <div class="w-full md:w-1/2 flex flex-col gap-4">
+                    <div class="p-8 glass-card rounded-3xl">
+                        <h3 class="serif text-2xl font-bold mb-6 text-white">Core Competencies</h3>
+                        <ul class="space-y-4 text-gray-200 font-light">
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]"></span> 
+                                Clinical Protocols & ICH-GCP
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_10px_#e879f9]"></span> 
+                                Scientific Communication
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_10px_#c084fc]"></span> 
+                                AI-Assisted Architecture
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span class="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_10px_#60a5fa]"></span> 
+                                Logic & Data Visualization
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Showcase -->
+    <section id="projects" class="py-20 px-6 reveal">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <h2 class="serif text-4xl font-bold mb-3 text-white">Project Lab</h2>
+                <p class="text-purple-200/60 font-light">Interactive layouts demonstrating structural logic and clean code.</p>
+            </div>
+
+            <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-32 px-6 text-center relative reveal">
+        <h2 class="serif text-4xl font-bold mb-8 text-white">Let's Connect</h2>
+        <p class="text-gray-300 mb-12 max-w-xl mx-auto font-light">
+            Looking for a proactive, clinically-trained strategist with a technical edge? Let's discuss how I can contribute to your Medical Affairs or Research team.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="mailto:your.email@example.com" class="px-8 py-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white rounded-full font-bold btn-glow border border-purple-400/50 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                Email Me
+            </a>
+            <a href="#" class="px-8 py-3 glass-card text-white rounded-full font-bold hover:bg-white/10 transition">
+                LinkedIn Profile
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center text-purple-200/40 text-xs uppercase tracking-widest">
+        &copy; 2024 Dr. Ratnapriya Thakur. Built with clean code & AI Fluency.
+    </footer>
+
+    <script>
+        // Projects Data updated for dark theme
+        const projects = [
+            {
+                id: 1,
+                title: "Clinical Trial Tracker",
+                desc: "An interactive dashboard built to manage regulatory phase transitions and participant metrics.",
+                tech: "HTML, CSS, JavaScript",
+                theme: "bg-gradient-to-br from-purple-900/40 to-black",
+                accent: "text-purple-300",
+                live: "#",
+                code: "#"
+            },
+            {
+                id: 2,
+                title: "Medical Data Analyzer",
+                desc: "A logic-based tool designed to translate complex scientific data into clean visual summaries.",
+                tech: "Vanilla JS, DOM Logic",
+                theme: "bg-gradient-to-br from-fuchsia-900/40 to-black",
+                accent: "text-fuchsia-300",
+                live: "#",
+                code: "#"
+            },
+            {
+                id: 3,
+                title: "Biotech Aesthetic Layout",
+                desc: "A high-end, responsive UI design focused on clinical precision and minimalist aesthetics.",
+                tech: "Tailwind CSS, HTML5",
+                theme: "bg-gradient-to-br from-blue-900/40 to-black",
+                accent: "text-blue-300",
+                live: "#",
+                code: "#"
+            }
+        ];
+
+        function renderProjects() {
+            const grid = document.getElementById('projectGrid');
+            grid.innerHTML = '';
+            
+            projects.forEach((p, index) => {
+                grid.innerHTML += `
+                    <div class="group glass-card rounded-3xl overflow-hidden flex flex-col h-full reveal" style="transition-delay: ${index * 150}ms">
+                        <div class="h-40 ${p.theme} flex items-center justify-center p-8 text-center border-b border-white/5 relative overflow-hidden">
+                            <!-- Subtle background glow -->
+                            <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <h3 class="serif text-2xl font-bold text-white z-10 drop-shadow-md">${p.title}</h3>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <p class="text-sm text-gray-300 mb-6 line-clamp-3 font-light">${p.desc}</p>
+                                <div class="flex flex-wrap gap-2 mb-8">
+                                    <span class="text-[10px] uppercase font-bold tracking-widest ${p.accent} bg-white/5 border border-white/10 px-2 py-1 rounded">
+                                        ${p.tech}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="${p.live}" class="flex-1 text-center py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/10 text-xs font-bold btn-glow uppercase tracking-widest">
+                                    Launch
+                                </a>
+                                <a href="${p.code}" class="flex-1 text-center py-3 rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/30 text-xs font-bold transition uppercase tracking-widest">
+                                    Source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Initialize
+        renderProjects();
+
+        // Scroll Reveal Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.15, // Trigger when 15% of the element is visible
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        // Observe existing elements
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // Observe dynamically added project cards
+        setTimeout(() => {
+            document.querySelectorAll('#projectGrid .reveal').forEach(el => revealObserver.observe(el));
+        }, 100);
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                // Small delay to allow display block to apply before animating opacity
+                setTimeout(() => {
+                    mobileMenu.classList.remove('opacity-0', '-translate-y-4');
+                    mobileMenu.classList.add('opacity-100', 'translate-y-0');
+                }, 10);
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                mobileMenu.classList.add('opacity-0', '-translate-y-4');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300); // Wait for transition to finish before hiding
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when a mobile link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+</body>
+</html>
