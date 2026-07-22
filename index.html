@@ -91,10 +91,11 @@
 
         /* Mobile Menu Glass */
         .mobile-menu {
-            background: rgba(5, 1, 15, 0.95)
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.98); /* Almost solid black */
+    backdrop-filter: blur(24px); /* Heavier blur */
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8); /* Massive dark shadow underneath */
         }
     </style>
 </head>
@@ -133,8 +134,9 @@
         <!-- Glowing Accent Line -->
         <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mb-8 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.6)]"></div>
         
-        <h1 class="serif text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
-            Dr. Ratnapriya Thakur, <span class="neon-text">BDS, FAGE</span>
+        <h1 class="serif text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg leading-tight md:leading-tight">
+            Dr. Ratnapriya Thakur<span class="hidden md:inline">,</span>
+            <span class="neon-text block md:inline mt-3 md:mt-0 text-4xl md:text-7xl">BDS, FAGE</span>
         </h1>
         <p class="text-lg md:text-xl text-gray-300 max-w-2xl font-light leading-relaxed">
             First-Class Clinical Graduate transitioning into <span class="text-white font-semibold">Medical Affairs & Clinical Research</span>. 
